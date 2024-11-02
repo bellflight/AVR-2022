@@ -50,8 +50,13 @@ class VMCControlWidget(BaseTabWidget):
         blue_led_button.clicked.connect(lambda: self.set_led((255, 0, 0, 255)))  # type: ignore
         led_layout.addWidget(blue_led_button)
 
+        white_led_button = QtWidgets.QPushButton("White")
+        white_led_button.setStyleSheet("background-color: white")
+        white_led_button.clicked.connect(lambda: self.set_led((255, 255, 255, 255)))  # type: ignore
+        led_layout.addWidget(white_led_button)
+
         clear_led_button = QtWidgets.QPushButton("Clear")
-        clear_led_button.setStyleSheet("background-color: white")
+        clear_led_button.setStyleSheet("background-color: black; color: white")
         clear_led_button.clicked.connect(lambda: self.set_led((0, 0, 0, 0)))  # type: ignore
         led_layout.addWidget(clear_led_button)
 
